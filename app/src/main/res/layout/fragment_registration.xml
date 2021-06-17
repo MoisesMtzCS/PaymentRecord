@@ -112,11 +112,20 @@
 
 
         <Button
+            android:id="@+id/save_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/lateral_margin"
             android:layout_marginTop="@dimen/vertical_margin"
             android:text="@string/register" />
+
+        <Button
+            android:id="@+id/to_list_client_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/lateral_margin"
+            android:layout_marginTop="@dimen/vertical_margin"
+            android:text="@string/to_list_of_clients" />
 
     </LinearLayout>
 </layout>

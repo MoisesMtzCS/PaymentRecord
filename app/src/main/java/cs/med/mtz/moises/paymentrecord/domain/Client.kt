@@ -1,5 +1,6 @@
 package cs.med.mtz.moises.paymentrecord.domain
 
+import java.io.Serializable
 import java.util.*
 
 data class Client(
@@ -8,5 +9,5 @@ data class Client(
     val middleName: String,
     val last_name: String,
     val birthdate: Date,
-    val gender: Boolean
-)
+    val gender: String
+) : Serializable

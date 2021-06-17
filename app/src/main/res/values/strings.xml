@@ -5,4 +5,8 @@
     <string name="Welcome">Bienvenido</string>
     <string name="register">Crear cuenta</string>
     <string name="birthdate">DD/MM/AAAA</string>
+    <string name="empty">Datos vacios</string>
+    <string name="gender_male">Masculino</string>
+    <string name="gender_feminine">Femenino</string>
+    <string name="to_list_of_clients">Lista de Clientes</string>
 </resources>

@@ -12,14 +12,14 @@ data class ClientDTO(
     val middleName: String,
     @ColumnInfo(name = "last_name") val lastName: String,
     val birthdate: Date,
-    val gender: Boolean
+    val gender: String
 ) {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id_customer")
     var idCustomer: Int? = null
 
 
-    fun toClient(Clients: List<Client>): Client = Client(
+    fun toClient(): Client = Client(
         idCustomer = idCustomer!!,
         name = name,
         middleName = middleName,

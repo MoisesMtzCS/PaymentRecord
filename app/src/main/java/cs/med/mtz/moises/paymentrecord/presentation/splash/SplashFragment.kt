@@ -34,7 +34,7 @@ class SplashFragment : Fragment() {
     private fun navigateToRegistration(){
         CoroutineScope(Dispatchers.Main).launch {
             delay(1_200)
-            findNavController().navigate(R.id.action_splashFragment_to_registration)
+            findNavController().navigate(R.id.action_splashFragment_to_registrationFragment)
         }
     }
 }

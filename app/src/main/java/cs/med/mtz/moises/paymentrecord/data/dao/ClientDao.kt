@@ -15,4 +15,8 @@ interface ClientDao {
 
     @Query("SELECT * FROM client_table WHERE id_customer = :id")
     suspend fun getById(id: Int): ClientDTO
+
+    @Query("SELECT * FROM client_table")
+    suspend fun getClients(): List<ClientDTO>
+
 }
