@@ -14,5 +14,6 @@
     <string name="sin_metas">Sin clientes</string>
     <string name="create_client">Registrar Cliente</string>
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat justo tempus vehicula viverra. Proin mollis ligula ex, et faucibus ante dapibus vitae. Vestibulum congue dolor sit amet porta cursus.</string>
+    <string name="create_client_new">Registra un cliente</string>
 
 </resources>

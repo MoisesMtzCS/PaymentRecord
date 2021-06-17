@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/vertical_margin"
             android:text="@string/Welcome"
-            android:textColor="@color/black"
+            android:textColor="@color/background_color_2"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -24,8 +24,8 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/lateral_margin"
             android:layout_marginTop="@dimen/vertical_margin"
-            android:text="Comencemos creando un usuario"
-            android:textColor="@color/black"
+            android:text="@string/create_client_new"
+            android:textColor="@color/background_color_2"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -117,6 +117,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/lateral_margin"
             android:layout_marginTop="@dimen/vertical_margin"
+            android:backgroundTint="@color/background_color_2"
             android:text="@string/register" />
 
         <Button
@@ -124,6 +125,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/lateral_margin"
+            android:backgroundTint="@color/background_color_2"
             android:layout_marginTop="@dimen/vertical_margin"
             android:text="@string/to_list_of_clients" />
 
