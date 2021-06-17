@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".presentation.registration.RegistrationActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/vertical_margin"
+            android:text="@string/Welcome"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/lateral_margin"
+            android:layout_marginTop="@dimen/vertical_margin"
+            android:text="Comencemos creando un usuario"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="22dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/name_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombre(s)"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="22dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/middle_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Apellido Paterno"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="22dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/last_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Apellido Materno"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/birthdate_button"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/vertical_margin"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/lateral_margin"
+            android:text="@string/birthdate"
+            android:textColor="@color/black" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginHorizontal="@dimen/lateral_margin"
+            android:layout_marginTop="@dimen/vertical_margin"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="1">
+
+            <RadioButton
+                android:id="@+id/rb_male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Masculino" />
+
+            <RadioButton
+                android:id="@+id/rb_feminine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Femenino" />
+        </RadioGroup>
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/lateral_margin"
+            android:layout_marginTop="@dimen/vertical_margin"
+            android:text="@string/register" />
+
+    </LinearLayout>
+</layout>

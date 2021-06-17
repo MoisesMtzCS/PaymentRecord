@@ -11,12 +11,12 @@
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
-            android:id="@+id/action_splashFragment_to_customerRegistrationActivity"
-            app:destination="@id/customerRegistrationActivity" />
+            android:id="@+id/action_splashFragment_to_registration"
+            app:destination="@id/registration" />
     </fragment>
     <activity
-        android:id="@+id/customerRegistrationActivity"
-        android:name="cs.med.mtz.moises.paymentrecord.presentation.customer_registration.CustomerRegistrationActivity"
-        android:label="activity_customer_registration"
-        tools:layout="@layout/activity_customer_registration" />
+        android:id="@+id/registration"
+        android:name="cs.med.mtz.moises.paymentrecord.presentation.registration.RegistrationActivity"
+        android:label="activity_registration"
+        tools:layout="@layout/activity_registration" />
 </navigation>
