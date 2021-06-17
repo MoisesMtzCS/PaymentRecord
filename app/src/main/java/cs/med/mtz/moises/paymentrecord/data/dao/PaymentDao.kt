@@ -1,11 +1,9 @@
 package cs.med.mtz.moises.paymentrecord.data.dao
 
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import cs.med.mtz.moises.paymentrecord.data.dto.PaymentDTO
 
+@Dao
 interface PaymentDao {
 
 
