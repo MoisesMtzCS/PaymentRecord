@@ -8,7 +8,7 @@ import java.util.*
 
 
 @Entity(tableName = "payments_table")
-data class PaymentsDTO(
+data class PaymentDTO(
     @ColumnInfo(name = "id_customer") val idCustomer: Int,
     val registerDate: Date,
     val currentDate: Date,
