@@ -24,6 +24,10 @@ class ClientAdapter(
     override fun onBindViewHolder(holder: ClientViewHolder, position: Int) {
         val client: Client = clients[position]
         holder.binding.tvName.text = client.name
+
+        holder.itemView.setOnClickListener {
+            onClientActionClick(client)
+        }
     }
 
     override fun getItemCount(): Int {

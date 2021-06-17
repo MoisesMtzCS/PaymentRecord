@@ -1,9 +1,6 @@
 package cs.med.mtz.moises.paymentrecord.data.dao
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import cs.med.mtz.moises.paymentrecord.data.dto.ClientDTO
 
 @Dao
@@ -18,5 +15,9 @@ interface ClientDao {
 
     @Query("SELECT * FROM client_table")
     suspend fun getClients(): List<ClientDTO>
+
+
+    @Delete
+    suspend fun deleteClient(clientDTO: ClientDTO)
 
 }

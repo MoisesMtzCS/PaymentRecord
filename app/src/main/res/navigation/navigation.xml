@@ -12,7 +12,8 @@
         tools:layout="@layout/fragment_splash">
         <action
             android:id="@+id/action_splashFragment_to_registrationFragment"
-            app:destination="@id/registrationFragment" />
+            app:destination="@id/registrationFragment"
+            app:popExitAnim="@id/splashFragment" />
     </fragment>
     <fragment
         android:id="@+id/registrationFragment"
@@ -21,16 +22,30 @@
         tools:layout="@layout/fragment_registration">
         <action
             android:id="@+id/action_registrationFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:popExitAnim="@id/registrationFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
         android:name="cs.med.mtz.moises.paymentrecord.presentation.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_profileActivity"
+            app:destination="@id/profileActivity"
+            app:popExitAnim="@id/homeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/profileActivity"
+        android:name="cs.med.mtz.moises.paymentrecord.presentation.profile.ProfileActivity"
+        android:label="activity_profile"
+        tools:layout="@layout/activity_profile">
         <argument
             android:name="client"
             app:argType="cs.med.mtz.moises.paymentrecord.domain.Client" />
-    </fragment>
+    </activity>
 
 </navigation>

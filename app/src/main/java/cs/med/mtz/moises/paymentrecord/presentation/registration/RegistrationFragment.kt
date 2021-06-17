@@ -87,12 +87,6 @@ class RegistrationFragment : Fragment() {
             val datePicker = MaterialDatePicker.Builder.datePicker()
                 .setTitleText("Fecha de nacimiento")
                 .build()
-            datePicker.addOnNegativeButtonClickListener {
-                Toast.makeText(requireContext(), "Cancelado", Toast.LENGTH_SHORT).show()
-            }
-            datePicker.addOnPositiveButtonClickListener {
-                Toast.makeText(requireContext(), Date(it).toString(), Toast.LENGTH_LONG).show()
-            }
             datePicker.show(childFragmentManager, null)
         }
     }

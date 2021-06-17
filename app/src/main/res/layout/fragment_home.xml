@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".presentation.home.HomeFragment">
 
@@ -8,11 +9,48 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <Button
+            android:id="@+id/create_client_button"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/lateral_margin"
+            android:layout_marginVertical="@dimen/vertical_margin"
+            android:text="@string/create_client"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/message_no_goals"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:text="@string/sin_metas"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/iv_sad"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:adjustViewBounds="true"
+            android:visibility="gone"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/sad"
+            app:lottie_url="REPLACE_JSON_URL"
+            tools:src="@color/black"
+            tools:visibility="visible" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_client"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:listitem="@layout/view_holder_client"/>
+            tools:listitem="@layout/view_holder_client" />
+
 
 
     </LinearLayout>

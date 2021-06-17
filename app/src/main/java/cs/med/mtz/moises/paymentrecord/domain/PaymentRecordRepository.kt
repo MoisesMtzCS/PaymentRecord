@@ -1,5 +1,6 @@
 package cs.med.mtz.moises.paymentrecord.domain
 
+import android.app.AlertDialog
 import cs.med.mtz.moises.paymentrecord.data.dao.ClientDao
 import cs.med.mtz.moises.paymentrecord.data.dao.PaymentDao
 import cs.med.mtz.moises.paymentrecord.data.dto.ClientDTO
@@ -11,7 +12,7 @@ class PaymentRecordRepository(
     private val paymentDao: PaymentDao
 ) {
 
-
+    /** */
     suspend fun createClient(
         name: String,
         middleName: String,
@@ -29,6 +30,13 @@ class PaymentRecordRepository(
         val clientDTO = clientDao.getClients()
         return clientDTO.map { it.toClient() }
     }
+
+    /** */
+    suspend fun deleteClient(id: Int) {
+        val client = clientDao.getById(id)
+        clientDao.deleteClient(client)
+    }
+
 
 
 }
