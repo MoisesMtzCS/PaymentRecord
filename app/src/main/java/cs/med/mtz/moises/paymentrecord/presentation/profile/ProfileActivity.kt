@@ -32,7 +32,6 @@ class ProfileActivity : AppCompatActivity() {
 
     /** */
     private fun execute() {
-      //  deleteGoalLiveData(args.client.idCustomer)
         setupOnDeleteGoalClickListener(args.client.idCustomer)
     }
 
@@ -42,6 +41,8 @@ class ProfileActivity : AppCompatActivity() {
         binding.tvMiddleName.text = args.client.middleName
         binding.tvLastName.text = args.client.last_name
         binding.tvGender.text = args.client.gender
+       // TODO: Colocar texto formateado de la fecha
+        binding.tvDateOfBirth.text = args.client.birthdate.toString()
     }
 
 

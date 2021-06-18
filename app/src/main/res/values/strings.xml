@@ -1,9 +1,7 @@
 <resources>
     <string name="app_name">PaymentRecord</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Welcome">Bienvenido</string>
-    <string name="register">Crear cuenta</string>
+    <string name="register">Registrar cliente</string>
     <string name="birthdate">DD/MM/AAAA</string>
     <string name="empty">Datos vacios</string>
     <string name="gender_male">Masculino</string>
@@ -15,5 +13,11 @@
     <string name="create_client">Registrar Cliente</string>
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat justo tempus vehicula viverra. Proin mollis ligula ex, et faucibus ante dapibus vitae. Vestibulum congue dolor sit amet porta cursus.</string>
     <string name="create_client_new">Registra un cliente</string>
+    <string name="register_pay">Registrar pago</string>
+    <string name="name">Nombre(s)</string>
+    <string name="middle_name">Apellido Paterno</string>
+    <string name="last_name">Apellido Materno</string>
+    <string name="male">Masculino</string>
+    <string name="femenine">Femenino</string>
 
 </resources>

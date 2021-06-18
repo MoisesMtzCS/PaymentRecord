@@ -40,7 +40,7 @@
                 android:id="@+id/name_user"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nombre(s)"
+                android:hint="@string/name"
                 android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -55,7 +55,7 @@
                 android:id="@+id/middle_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Apellido Paterno"
+                android:hint="@string/middle_name"
                 android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -70,7 +70,7 @@
                 android:id="@+id/last_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Apellido Materno"
+                android:hint="@string/last_name"
                 android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -78,9 +78,9 @@
             android:id="@+id/birthdate_button"
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="match_parent"
-            android:layout_marginTop="@dimen/vertical_margin"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/lateral_margin"
+            android:layout_marginTop="@dimen/vertical_margin"
             android:text="@string/birthdate"
             android:textColor="@color/black" />
 
@@ -91,8 +91,8 @@
             android:layout_gravity="start"
             android:layout_marginHorizontal="@dimen/lateral_margin"
             android:layout_marginTop="@dimen/vertical_margin"
-            android:orientation="horizontal"
             android:gravity="center"
+            android:orientation="horizontal"
             android:weightSum="1">
 
             <RadioButton
@@ -100,14 +100,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="false"
-                android:text="Masculino" />
+                android:text="@string/male" />
 
             <RadioButton
                 android:id="@+id/rb_feminine"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="false"
-                android:text="Femenino" />
+                android:text="@string/femenine" />
         </RadioGroup>
 
 
@@ -122,12 +122,13 @@
 
         <Button
             android:id="@+id/to_list_client_button"
+            style="?attr/materialButtonOutlinedStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/lateral_margin"
-            android:backgroundTint="@color/background_color_2"
             android:layout_marginTop="@dimen/vertical_margin"
-            android:text="@string/to_list_of_clients" />
+            android:text="@string/to_list_of_clients"
+            android:textColor="@color/background_color_2" />
 
     </LinearLayout>
 </layout>

@@ -66,8 +66,7 @@ class RegistrationFragment : Fragment() {
     /** */
     private fun createClientClickListener() {
         binding.saveButton.setOnClickListener {
-            if (nameUser.isNotBlank() && middleName.isNotBlank() && lastName.isNotBlank()) {
-
+            if (nameUser.isNotBlank() && middleName.isNotBlank() && lastName.isNotBlank() && gender != null) {
                 registrationViewModel.createClientLiveData(
                     nameUser,
                     middleName,
@@ -123,5 +122,6 @@ class RegistrationFragment : Fragment() {
             Toast.makeText(requireContext(), gender.toString(), Toast.LENGTH_SHORT).show()
         }
     }
+
 
 }

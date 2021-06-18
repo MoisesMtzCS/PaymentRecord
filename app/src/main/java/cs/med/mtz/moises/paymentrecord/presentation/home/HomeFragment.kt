@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
@@ -68,7 +69,6 @@ class HomeFragment : Fragment() {
 
     private fun toRegisterClientClickListenet(){
         binding.createClientButton.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_registrationFragment)
         }
     }
 }

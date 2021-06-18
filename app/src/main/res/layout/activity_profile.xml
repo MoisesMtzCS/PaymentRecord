@@ -84,7 +84,7 @@
                 android:layout_marginTop="@dimen/vertical_margin"
                 android:layout_marginEnd="@dimen/lateral_margin"
                 android:contentDescription="@null"
-                android:src="@drawable/ic_profile"
+                android:src="@drawable/ic_user"
                 android:textSize="50sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -152,15 +152,26 @@
                     android:layout_marginStart="@dimen/lateral_margin"
                     android:background="@color/cardview_dark_background" />
 
+
+                <Button
+                    android:id="@+id/register_pay_button"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/lateral_margin"
+                    android:layout_marginVertical="@dimen/vertical_margin"
+                    android:text="@string/register_pay"
+                    android:textColor="@color/background_color_2" />
+
                 <Button
                     android:id="@+id/delete_button"
-                    style="?attr/materialButtonOutlinedStyle"
+                    android:backgroundTint="@color/background_color_2"
                     android:layout_width="match_parent"
                     android:layout_marginVertical="@dimen/vertical_margin"
                     android:layout_marginHorizontal="@dimen/lateral_margin"
                     android:text="@string/delite_client"
-                    android:textColor="@color/background_color_2"
                     android:layout_height="wrap_content" />
+
             </LinearLayout>
 
         </ScrollView>
