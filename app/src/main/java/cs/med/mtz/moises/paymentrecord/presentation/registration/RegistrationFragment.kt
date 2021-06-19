@@ -24,6 +24,7 @@ class RegistrationFragment : Fragment() {
     /*  */
     private val registrationViewModel: RegistrationViewModel by viewModel()
 
+    /** */
     private val nameUser: String
         get() = binding.nameUser.text.toString()
 

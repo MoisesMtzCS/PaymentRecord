@@ -9,7 +9,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.PaymentRecord">
+        android:theme="@style/Theme.PaymentRecord"
+        android:screenOrientation="portrait">
         <activity android:name=".presentation.profile.profile_activity.ProfileActivity" android:theme="@style/Theme.profile">
 
         </activity>

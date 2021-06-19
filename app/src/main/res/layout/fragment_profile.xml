@@ -133,7 +133,18 @@
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    tools:text="Industrial Designer, 85" />
+                    tools:text="Fecha de naciemiento: 23 de octubre de 1999"/>
+
+                <TextView
+                    android:id="@+id/tv_total_pay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/vertical_margin"
+                    android:layout_marginStart="@dimen/lateral_margin"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:text="Total pagado: $5850" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/new_goal_name"

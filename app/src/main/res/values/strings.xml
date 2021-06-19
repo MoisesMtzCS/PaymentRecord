@@ -2,13 +2,15 @@
     <string name="app_name">PaymentRecord</string>
     <string name="Welcome">Bienvenido</string>
     <string name="register">Registrar cliente</string>
-    <string name="birthdate">DD/MM/AAAA</string>
+    <string name="birthdate">Fecha de nacimiento dd/mm/aaaa</string>
     <string name="empty">Datos vacios</string>
     <string name="gender_male">Masculino</string>
     <string name="gender_feminine">Femenino</string>
     <string name="to_list_of_clients">Lista de Clientes</string>
     <string name="delite_client">Eliminar Cliente</string>
-    <string name="confirm_delete">¿Seguro que desea eliminar su objetivo?</string>
+    <string name="confirm_delete">¿Seguro que desea eliminar este cliente?</string>
+    <string name="confirm_pay">¿Seguro que desea realizar este pago de $%s ?</string>
+    <string name="total_pay">Total pagado: $%s </string>
     <string name="sin_metas">Sin clientes</string>
     <string name="create_client">Registrar Cliente</string>
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat justo tempus vehicula viverra. Proin mollis ligula ex, et faucibus ante dapibus vitae. Vestibulum congue dolor sit amet porta cursus.</string>

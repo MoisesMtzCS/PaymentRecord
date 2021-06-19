@@ -1,5 +1,6 @@
 package cs.med.mtz.moises.paymentrecord.presentation.profile
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,9 +14,8 @@ import cs.med.mtz.moises.paymentrecord.R
 import cs.med.mtz.moises.paymentrecord.databinding.FragmentProfileBinding
 import cs.med.mtz.moises.paymentrecord.domain.Payment
 import cs.med.mtz.moises.paymentrecord.presentation.profile.adapter.PaymentAdapter
+import cs.med.mtz.moises.paymentrecord.presentation.util.clearInput
 import org.koin.android.viewmodel.ext.android.viewModel
-import java.text.SimpleDateFormat
-import java.util.*
 
 /** */
 class ProfileFragment : Fragment() {
@@ -50,7 +50,7 @@ class ProfileFragment : Fragment() {
 
     /** */
     private fun execute() {
-        setupOnDeleteGoalClickListener(args.client.idCustomer)
+        setupOnDeleteGoalClickListener()
         makeVisibleUpdateClickListener()
         loadPaymentsList()
         createPaymentClickListener()
@@ -71,18 +71,31 @@ class ProfileFragment : Fragment() {
 
 
     /** */
-    private fun deleteGoalLiveData(id: Int) {
-        profileViewModel.deleteClientAsLiveData(id)
+    private fun deleteGoalLiveData() {
+        profileViewModel.deleteClientAsLiveData(args.client.idCustomer)
             .observe(viewLifecycleOwner) {
                 requireActivity().onBackPressed()
             }
     }
 
     /** */
-    private fun setupOnDeleteGoalClickListener(id: Int) {
+    private fun setupOnDeleteGoalClickListener() {
         binding.deleteButton.setOnClickListener {
-            deleteGoalLiveData(id)
+            alertConfirmDelete()
         }
+    }
+
+    /** */
+    private fun alertConfirmDelete() {
+        val builder = AlertDialog.Builder(requireContext())
+            .setTitle(getString(R.string.confirm_delete))
+            .setPositiveButton("aceptar") { dialog, _ ->
+                deleteGoalLiveData()
+                dialog.dismiss()
+            }
+            .setNegativeButton("cancelar", null)
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
     }
 
     /** */
@@ -98,9 +111,10 @@ class ProfileFragment : Fragment() {
         profileViewModel.getPaymentsAsLiveData(args.client.idCustomer)
             .observe(viewLifecycleOwner) { payments ->
                 fillRecyclerView(payments)
-//                var sum:Double = 0.0
-//                payments.forEach { sum += it.amount }
-//                 binding.tvDateOfBirth.text = sum.toString()
+                var sum: Double = 0.0
+                payments.forEach { sum += it.amount }
+                binding.tvTotalPay.text =
+                    getString(R.string.total_pay, sum.toString())
             }
     }
 
@@ -113,21 +127,39 @@ class ProfileFragment : Fragment() {
     }
 
     /** */
+    private fun createPayment() {
+        if (mountOfPay.isNotBlank()) {
+            Toast.makeText(requireContext(), "si paso $mountOfPay", Toast.LENGTH_SHORT).show()
+            profileViewModel.newPaymentLiveData(
+                idCustomer = args.client.idCustomer,
+                amount = mountOfPay.toDouble()
+            ).observe(viewLifecycleOwner) {
+                loadPaymentsList()
+                binding.newGoalName.visibility = View.GONE
+                binding.payButton.visibility = View.GONE
+                binding.etPay.clearInput()
+            }
+        } else
+            Toast.makeText(requireContext(), "no paso", Toast.LENGTH_SHORT).show()
+    }
+
+    /** */
     private fun createPaymentClickListener() {
         binding.payButton.setOnClickListener {
-            if (mountOfPay.isNotBlank()) {
-                Toast.makeText(requireContext(), "si paso $mountOfPay", Toast.LENGTH_SHORT).show()
-                profileViewModel.newPaymentLiveData(
-                    idCustomer = args.client.idCustomer,
-                    amount = mountOfPay.toDouble()
-                ).observe(viewLifecycleOwner) {
-                    loadPaymentsList()
-                    binding.newGoalName.visibility = View.GONE
-                    binding.payButton.visibility = View.GONE
-                }
-            } else
-                Toast.makeText(requireContext(), "no paso", Toast.LENGTH_SHORT).show()
-
+            alertConfirmPay()
         }
+    }
+
+    /** */
+    private fun alertConfirmPay() {
+        val builder = AlertDialog.Builder(requireContext())
+            .setTitle(getString(R.string.confirm_pay, mountOfPay))
+            .setPositiveButton("aceptar") { dialog, _ ->
+                createPayment()
+                dialog.dismiss()
+            }
+            .setNegativeButton("cancelar", null)
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
     }
 }
