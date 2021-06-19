@@ -11,17 +11,15 @@ import java.util.*
 data class PaymentDTO(
     @ColumnInfo(name = "id_customer") val idCustomer: Int,
     val registerDate: Date,
-    val currentDate: Date,
     val amount : Double
 ){
-    @PrimaryKey(autoGenerate = true)
 
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id_payment") var idPayment:Int? = null
 
-    fun toPayment(payments:List<Payment>): Payment = Payment(
+    fun toPayment(): Payment = Payment(
         idPayment = idPayment!!,
         registerDate = registerDate,
-        currentDate = currentDate,
         amount = amount
     )
 }

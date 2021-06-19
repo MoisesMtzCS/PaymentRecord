@@ -39,7 +39,6 @@ class HomeFragment : Fragment() {
     /** */
     private fun execute() {
         observerClients()
-        toRegisterClientClickListenet()
     }
 
     /** */
@@ -63,12 +62,9 @@ class HomeFragment : Fragment() {
 
     /** */
     private fun onClientClickListener(client: Client) {
-        val direction = HomeFragmentDirections.actionHomeFragmentToProfileActivity(client)
+        val direction = HomeFragmentDirections.actionHomeFragmentToProfileFragment(client)
         findNavController().navigate(direction)
     }
 
-    private fun toRegisterClientClickListenet(){
-        binding.createClientButton.setOnClickListener {
-        }
-    }
+
 }

@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PaymentRecord">
-        <activity android:name=".presentation.profile.ProfileActivity" android:theme="@style/Theme.profile">
+        <activity android:name=".presentation.profile.profile_activity.ProfileActivity" android:theme="@style/Theme.profile">
 
         </activity>
 

@@ -9,15 +9,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/create_client_button"
-            style="?attr/materialButtonOutlinedStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/lateral_margin"
-            android:layout_marginVertical="@dimen/vertical_margin"
-            android:text="@string/create_client"
-            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/message_no_goals"

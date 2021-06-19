@@ -19,5 +19,12 @@
     <string name="last_name">Apellido Materno</string>
     <string name="male">Masculino</string>
     <string name="femenine">Femenino</string>
+    <string name="birthdate_profile">Fecha de nacimiento: %s</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="amount_payable">Monto a pagar</string>
+    <string name="pay_register">Registrar</string>
+
 
 </resources>

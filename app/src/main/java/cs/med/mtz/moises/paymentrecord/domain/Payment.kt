@@ -5,6 +5,5 @@ import java.util.*
 data class Payment(
     val idPayment: Int,
     val registerDate: Date,
-    val currentDate: Date,
     val amount : Double
 )

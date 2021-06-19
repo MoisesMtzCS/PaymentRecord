@@ -1,9 +1,10 @@
 package cs.med.mtz.moises.paymentrecord.domain
 
-import android.app.AlertDialog
+import android.util.Log
 import cs.med.mtz.moises.paymentrecord.data.dao.ClientDao
 import cs.med.mtz.moises.paymentrecord.data.dao.PaymentDao
 import cs.med.mtz.moises.paymentrecord.data.dto.ClientDTO
+import cs.med.mtz.moises.paymentrecord.data.dto.PaymentDTO
 import java.util.*
 
 /** */
@@ -17,7 +18,7 @@ class PaymentRecordRepository(
         name: String,
         middleName: String,
         lastName: String,
-        birthdate: Date,
+        birthdate: String,
         gender: String
 
     ) {
@@ -34,7 +35,26 @@ class PaymentRecordRepository(
     /** */
     suspend fun deleteClient(id: Int) {
         val client = clientDao.getById(id)
+        paymentDao.deleteContractsByGoalId(id)
         clientDao.deleteClient(client)
+    }
+
+    /** */
+    suspend fun createPayment(amount: Double, idCustomer: Int) {
+        val paymetDTO = PaymentDTO(
+            idCustomer = idCustomer,
+            amount = amount,
+            registerDate = Date())
+        val generatedId = paymentDao.insertOne(paymetDTO)
+        Log.e("IDDDD", generatedId.toString())
+    }
+
+    /** */
+    suspend fun getPayments(id: Int): List<Payment> {
+        val paymentDTO = paymentDao.getByCustomerId(id)
+        return paymentDTO.map {
+            it.toPayment()
+        }
     }
 
 

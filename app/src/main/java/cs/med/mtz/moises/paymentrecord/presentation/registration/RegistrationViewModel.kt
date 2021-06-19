@@ -7,7 +7,6 @@ import cs.med.mtz.moises.paymentrecord.domain.PaymentRecordRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.flow
 import java.lang.Exception
-import java.util.*
 
 class RegistrationViewModel(private val paymentRecordRepository: PaymentRecordRepository) :
     ViewModel() {
@@ -18,7 +17,7 @@ class RegistrationViewModel(private val paymentRecordRepository: PaymentRecordRe
         name: String,
         middleName: String,
         lastName: String,
-        birthdate: Date,
+        birthdate: String,
         gender: String
     ): LiveData<Unit> =
         flow {

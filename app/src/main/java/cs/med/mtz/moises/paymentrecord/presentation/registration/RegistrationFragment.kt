@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.DatePicker
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -32,8 +33,7 @@ class RegistrationFragment : Fragment() {
     private val lastName: String
         get() = binding.lastName.text.toString()
 
-//    private val birthdate: Date
-//        get() = binding.birthdateButton.
+    private var birthdate: String? = null
 
     private var gender: String? = null
 
@@ -66,12 +66,12 @@ class RegistrationFragment : Fragment() {
     /** */
     private fun createClientClickListener() {
         binding.saveButton.setOnClickListener {
-            if (nameUser.isNotBlank() && middleName.isNotBlank() && lastName.isNotBlank() && gender != null) {
+            if (nameUser.isNotBlank() && middleName.isNotBlank() && lastName.isNotBlank() && gender != null && birthdate!=null) {
                 registrationViewModel.createClientLiveData(
                     nameUser,
                     middleName,
                     lastName,
-                    Date(),
+                    birthdate!!,
                     gender!!
                 ).observe(viewLifecycleOwner) {
                     navigateToHome()
@@ -86,7 +86,11 @@ class RegistrationFragment : Fragment() {
             val datePicker = MaterialDatePicker.Builder.datePicker()
                 .setTitleText("Fecha de nacimiento")
                 .build()
-            datePicker.show(childFragmentManager, null)
+          datePicker.show(childFragmentManager, null)
+            datePicker.addOnPositiveButtonClickListener {
+                binding.birthdateButton.text = datePicker.headerText
+                birthdate = datePicker.headerText
+            }
         }
     }
 

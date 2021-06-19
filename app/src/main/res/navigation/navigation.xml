@@ -31,17 +31,27 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_homeFragment_to_profileActivity"
-            app:destination="@id/profileActivity" />
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
+
+    <!--
     <activity
         android:id="@+id/profileActivity"
-        android:name="cs.med.mtz.moises.paymentrecord.presentation.profile.ProfileActivity"
-        android:label="activity_profile"
+        android:name="cs.med.mtz.moises.paymentrecord.presentation.profile.profile_activity.ProfileActivity"
         tools:layout="@layout/activity_profile">
         <argument
             android:name="client"
             app:argType="cs.med.mtz.moises.paymentrecord.domain.Client" />
     </activity>
+    -->
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="cs.med.mtz.moises.paymentrecord.presentation.profile.ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <argument
+            android:name="client"
+            app:argType="cs.med.mtz.moises.paymentrecord.domain.Client" />
+    </fragment>
 
 </navigation>

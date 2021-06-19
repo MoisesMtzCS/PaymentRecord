@@ -21,13 +21,13 @@
             android:orientation="horizontal">
 
             <com.airbnb.lottie.LottieAnimationView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:adjustViewBounds="true"
-                tools:src="@color/black"
+                tools:src="@tools:sample/avatars"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"
-                app:lottie_rawRes="@raw/user"
+                app:lottie_rawRes="@raw/avatar"
                 app:lottie_url="REPLACE_JSON_URL" />
 
             <TextView
@@ -36,6 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:textColor="@color/black"
+                android:layout_marginHorizontal="@dimen/lateral_margin"
                 tools:text="Moises Martinez"
                 android:textStyle="bold"
                 android:textSize="18sp"/>
