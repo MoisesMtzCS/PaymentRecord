@@ -12,7 +12,10 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.datepicker.MaterialDatePicker
 import cs.med.mtz.moises.paymentrecord.R
 import cs.med.mtz.moises.paymentrecord.databinding.FragmentRegistrationBinding
+import cs.med.mtz.moises.paymentrecord.presentation.util.clearInput
 import org.koin.android.viewmodel.ext.android.viewModel
+import java.lang.Exception
+import java.net.UnknownHostException
 import java.util.*
 
 //
@@ -67,7 +70,7 @@ class RegistrationFragment : Fragment() {
     /** */
     private fun createClientClickListener() {
         binding.saveButton.setOnClickListener {
-            if (nameUser.isNotBlank() && middleName.isNotBlank() && lastName.isNotBlank() && gender != null && birthdate!=null) {
+            if (nameUser.isNotBlank() && middleName.isNotBlank() && lastName.isNotBlank() && gender != null && birthdate != null) {
                 registrationViewModel.createClientLiveData(
                     nameUser,
                     middleName,
@@ -76,9 +79,19 @@ class RegistrationFragment : Fragment() {
                     gender!!
                 ).observe(viewLifecycleOwner) {
                     navigateToHome()
+                    cleanRegistry()
                 }
-            } else alert()
+            } else mesageForAlert()
         }
+    }
+
+    /** */
+    private fun cleanRegistry() {
+        binding.nameUser.clearInput()
+        binding.middleName.clearInput()
+        binding.lastName.clearInput()
+        binding.birthdateButton.text = getString(R.string.birthdate)
+        gender = null
     }
 
     /** */
@@ -87,7 +100,7 @@ class RegistrationFragment : Fragment() {
             val datePicker = MaterialDatePicker.Builder.datePicker()
                 .setTitleText("Fecha de nacimiento")
                 .build()
-          datePicker.show(childFragmentManager, null)
+            datePicker.show(childFragmentManager, null)
             datePicker.addOnPositiveButtonClickListener {
                 binding.birthdateButton.text = datePicker.headerText
                 birthdate = datePicker.headerText
@@ -108,15 +121,6 @@ class RegistrationFragment : Fragment() {
     }
 
     /** */
-    private fun alert() {
-        AlertDialog.Builder(this.context)
-            .setTitle(getString(R.string.empty))
-            .setPositiveButton("aceptar", null)
-            .create()
-            .show()
-    }
-
-    /** */
     private fun setupGenderRadioGroup() {
         binding.radioGroup.setOnCheckedChangeListener { _, checkedId ->
             gender = when (checkedId) {
@@ -124,8 +128,37 @@ class RegistrationFragment : Fragment() {
                 R.id.rb_feminine -> getString(R.string.gender_feminine)
                 else -> null
             }
-            Toast.makeText(requireContext(), gender.toString(), Toast.LENGTH_SHORT).show()
         }
+    }
+
+    /** */
+    private fun mesageForAlert() {
+        val errorMessage = when {
+            nameUser.isBlank() ->
+                getString(R.string.name_user_is_blank)
+            middleName.isBlank() ->
+                getString(R.string.middlename_is_blank)
+            lastName.isBlank() ->
+                getString(R.string.lastname_is_blank)
+            gender == null ->
+                getString(R.string.gender_is_null)
+            birthdate == null ->
+                getString(R.string.birthdate_is_null)
+
+            else -> getString(R.string.error_when_registering)
+        }
+        alert(errorMessage)
+    }
+
+
+    /** */
+    private fun alert(message: String) {
+        val builder = AlertDialog.Builder(requireContext())
+            .setTitle(getString(R.string.error))
+            .setMessage(message)
+            .setPositiveButton("aceptar", null)
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
     }
 
 

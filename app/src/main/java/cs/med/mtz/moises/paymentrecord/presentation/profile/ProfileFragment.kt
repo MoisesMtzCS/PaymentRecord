@@ -129,7 +129,6 @@ class ProfileFragment : Fragment() {
     /** */
     private fun createPayment() {
         if (mountOfPay.isNotBlank()) {
-            Toast.makeText(requireContext(), "si paso $mountOfPay", Toast.LENGTH_SHORT).show()
             profileViewModel.newPaymentLiveData(
                 idCustomer = args.client.idCustomer,
                 amount = mountOfPay.toDouble()
@@ -140,20 +139,20 @@ class ProfileFragment : Fragment() {
                 binding.etPay.clearInput()
             }
         } else
-            Toast.makeText(requireContext(), "no paso", Toast.LENGTH_SHORT).show()
+            alert(getString(R.string.error_pay))
     }
 
     /** */
     private fun createPaymentClickListener() {
         binding.payButton.setOnClickListener {
-            alertConfirmPay()
+            alert(getString(R.string.confirm_pay, mountOfPay))
         }
     }
 
     /** */
-    private fun alertConfirmPay() {
+    private fun alert(message: String) {
         val builder = AlertDialog.Builder(requireContext())
-            .setTitle(getString(R.string.confirm_pay, mountOfPay))
+            .setTitle(message)
             .setPositiveButton("aceptar") { dialog, _ ->
                 createPayment()
                 dialog.dismiss()
