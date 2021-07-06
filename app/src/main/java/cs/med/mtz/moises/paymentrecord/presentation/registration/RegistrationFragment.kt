@@ -5,8 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.DatePicker
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.datepicker.MaterialDatePicker
@@ -14,9 +12,6 @@ import cs.med.mtz.moises.paymentrecord.R
 import cs.med.mtz.moises.paymentrecord.databinding.FragmentRegistrationBinding
 import cs.med.mtz.moises.paymentrecord.presentation.util.clearInput
 import org.koin.android.viewmodel.ext.android.viewModel
-import java.lang.Exception
-import java.net.UnknownHostException
-import java.util.*
 
 //
 class RegistrationFragment : Fragment() {
